@@ -6,6 +6,31 @@ This codebase is based on Litecoin Core v0.21.4 and carries Mooncoin-specific co
 
 Website: https://mooncoincore.org
 
+Windows First Start: 0 Connections Fix
+--------------------------------------
+
+If your first Windows startup shows `connections = 0`, create `mooncoin.conf` in your data directory and restart.
+
+Place file here:
+
+- Custom data directory you selected on first launch (recommended), for example: `D:\MooncoinData\mooncoin.conf`
+- Or default app data directory: `%APPDATA%\Mooncoin\mooncoin.conf`
+
+Use this bootstrap list:
+
+```conf
+addnode=87.98.254.62:44664
+addnode=159.196.219.68:44664
+addnode=51.38.80.19:44664
+addnode=51.77.231.146:44664
+addnode=158.69.210.223:44664
+addnode=71.197.80.244:44664
+addnode=24.52.248.184:44664
+addnode=89.185.100.228:44664
+```
+
+After restart, check `Help -> Debug window -> Information` and confirm connections are no longer zero.
+
 Project Context
 ---------------
 

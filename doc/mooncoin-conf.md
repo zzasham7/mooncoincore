@@ -43,6 +43,28 @@ addnode=87.98.254.62:44664
 addnode=159.196.219.68:44664
 ```
 
+## Troubleshooting: first start has 0 connections (Windows)
+
+If first startup shows `connections = 0`, create `mooncoin.conf` in the active data directory and restart.
+
+Common data directory targets:
+
+- Your custom startup data directory (if selected in the first-run wizard), for example: `D:\MooncoinData\mooncoin.conf`
+- `%APPDATA%\Mooncoin\mooncoin.conf`
+
+Bootstrap list:
+
+```ini
+addnode=87.98.254.62:44664
+addnode=159.196.219.68:44664
+addnode=51.38.80.19:44664
+addnode=51.77.231.146:44664
+addnode=158.69.210.223:44664
+addnode=71.197.80.244:44664
+addnode=24.52.248.184:44664
+addnode=89.185.100.228:44664
+```
+
 ## Authentication
 
 Recommended:
