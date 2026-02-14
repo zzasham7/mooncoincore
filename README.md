@@ -157,8 +157,14 @@ cd ..
 ./autogen.sh
 CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site \
 ./configure --prefix=/ --with-gui=qt5 --enable-zmq
-make -j"$(nproc)"
+make -j1
 ```
+
+Windows cross-build note:
+
+- `depends` can run with parallel jobs (`-j$(nproc)`).
+- Final top-level build is recommended with `make -j1` for stability in this repository.
+- If you hit linker `undefined reference` errors during a parallel build, retry with `make -j1 V=1`.
 
 Quick Start (Mainnet Daemon)
 ----------------------------

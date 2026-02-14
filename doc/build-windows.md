@@ -31,7 +31,7 @@ CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site \
 ## 4. Build
 
 ```bash
-make -j"$(nproc)"
+make -j1
 ```
 
 ## 5. Output artifacts
@@ -57,3 +57,5 @@ cd release-win64 && zip -9 -r ../mooncoin-v0.21.4-win64.zip . && cd ..
 - If `depends` fails with malformed `PATH`, sanitize PATH and retry from a clean shell.
 - If `cmake` is missing during `depends` build, install `cmake` and rerun.
 - Keep source under Linux filesystem paths in WSL (for example `~/mooncoin/litecoin`), not under `/mnt/*`.
+- In this repository, top-level parallel cross-builds may fail with linker `undefined reference` races. Use `make -j1` for final build stability.
+- For diagnosis, run: `make -j1 V=1 2>&1 | tee /tmp/win-build.log`.
